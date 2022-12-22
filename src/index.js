@@ -1,3 +1,5 @@
+import { CartProvider } from "./context/cart-context.component.jsx";
+import { ProductsProvider } from "./context/products-context.jsx";
 import { UserProvider } from "./context/user.context.jsx";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -10,7 +12,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ProductsProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,

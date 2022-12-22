@@ -1,3 +1,6 @@
+import { CartContext } from "../../context/cart-context.component";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+import CartIcon from "../../components/cart-icon/cart-icon.component";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import { UserContext } from "../../context/user.context";
 import { Fragment, useContext } from "react";
@@ -7,6 +10,7 @@ import "./navigation.styles.scss";
 
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { isCartOpen } = useContext(CartContext);
   console.log(currentUser);
 
   const signOutHandler = async () => {
@@ -32,7 +36,9 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
+          <CartIcon />
         </div>
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </Fragment>
