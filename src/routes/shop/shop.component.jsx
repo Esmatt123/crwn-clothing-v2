@@ -1,5 +1,5 @@
 import "./shop.styles.scss";
-import ProductCard from "../../components/product-card/product-card.component";
+import ProductCart from "../../components/product-card/product-card.component";
 import { ProductsContext } from "../../context/products-context";
 import { useContext } from "react";
 
@@ -8,7 +8,7 @@ const Shop = () => {
   return (
     <div className="products-container">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCart key={product.id} product={product} />
       ))}
     </div>
   );
