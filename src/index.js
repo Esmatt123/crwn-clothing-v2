@@ -1,5 +1,5 @@
 import { CartProvider } from "./context/cart-context.component.jsx";
-import { ProductsProvider } from "./context/products-context.jsx";
+import { CategoriesProvider } from "./context/categories-context.jsx";
 import { UserProvider } from "./context/user.context.jsx";
 import React from "react";
 import ReactDOM from "react-dom";
@@ -12,11 +12,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <ProductsProvider>
+        <CategoriesProvider>
           <CartProvider>
             <App />
           </CartProvider>
-        </ProductsProvider>
+        </CategoriesProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,

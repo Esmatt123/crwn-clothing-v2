@@ -1,4 +1,4 @@
-import "./authentication.styles.scss";
+import { AuthenticationContainer } from "./authentication.styles.jsx";
 import SignInForm from "../../sign-in-form/sign-in-form.component";
 import { useEffect } from "react";
 import { getRedirectResult } from "firebase/auth";
@@ -17,10 +17,10 @@ const Authentication = () => {
   }, []);
 
   return (
-    <div className="authentication-container">
+    <AuthenticationContainer>
       <SignInForm />
       <SignUpForm />
-    </div>
+    </AuthenticationContainer>
   );
 };
 export default Authentication;
