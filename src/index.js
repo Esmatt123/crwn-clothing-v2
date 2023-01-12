@@ -1,6 +1,8 @@
-import { CartProvider } from "./context/cart-context.component.jsx";
-import { CategoriesProvider } from "./context/categories-context.jsx";
-import { UserProvider } from "./context/user.context.jsx";
+import { stripePromise } from "./utils/stripe/stripe.utils.js";
+import { Elements } from "@stripe/react-stripe-js"; //*The Elements provider allows you to use Element components and access the Stripe object in any nested component.
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./store/store.js";
+import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -8,19 +10,23 @@ import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+const rootElement = document.getElementById("root");
+
+//*PersistGate is an entry point to your react application which allows you to persist your store, the loading null means load nothing until the persist is done
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <Elements stripe={stripePromise}>
             <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+          </Elements>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>,
-  document.getElementById("root")
+  rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function

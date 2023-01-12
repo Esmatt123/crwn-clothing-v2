@@ -1,6 +1,6 @@
 import { CartItemContainer, ItemDetails } from "./cart-item.styles.jsx";
 
-const CartItem = ({ cartItem }) => {
+const CartItem = ({ cartItem }) => { //* the structure of the added item in the cart dropdown
   const { imageUrl, price, name, quantity } = cartItem;
 
   return (
