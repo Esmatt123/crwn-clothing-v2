@@ -1,4 +1,4 @@
-import { selectCurrentUser } from "store/user/user.selector";
+import { selectCurrentUser } from "../../store/user/user.selector";
 import { selectCartTotal } from "../../store/cart/cart.selector";
 import { useState } from "react";
 import { useSelector } from "react-redux";
