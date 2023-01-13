@@ -6,9 +6,12 @@ import SignUpForm from "../../sign-up-form/sign-up-form.component";
 import { auth } from "../../utils/firebase/firebase.utils";
 //*This means that when the response mounts for the first time, the getRedirectResult will fetch data about the redirect
 const Authentication = () => {
-  useEffect(async () => {
-    const response = await getRedirectResult(auth);
-    console.log(response);
+  useEffect(() => {
+    const fetchdata = async () => {
+      const response = await getRedirectResult(auth);
+      console.log(response);
+    };
+    console.log(fetchdata);
   }, []);
 
   return (

@@ -12,7 +12,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(checkUserSession()); //*will call checkusersession which creates user document reference
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
