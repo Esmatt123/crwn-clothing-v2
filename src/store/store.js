@@ -13,19 +13,6 @@ receives the store's dispatch method, which is used to dispatch an action at a l
 This is often useful when you need to perform an asynchronous action, 
 such as making an API call, and dispatch an action with the API response.  */
 
-const loggerMiddleware = (store) => (next) => (action) => {
-  if (!action.type) {
-    return next(action);
-  }
-  console.log("type", action.type);
-  console.log("payload", action.payload);
-  console.log("currentState", store.getState());
-
-  next(action);
-
-  console.log("next state: ", store.getState());
-};
-
 const persistConfig = {
   key: "root", //* root just means the entire thing will be stored on localStorage
   storage, //* this means local storage, its from the redux-persist library

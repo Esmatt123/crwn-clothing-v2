@@ -10,7 +10,7 @@ const Shop = () => {
 
   useEffect(() => {
     dispatch(fetchCategoriesStart()); //*Sets the isLoading payload to true which activates the fetchCategoriesAsync function
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>

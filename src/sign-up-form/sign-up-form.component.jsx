@@ -4,10 +4,6 @@ import Button from "../components/button/button.component.jsx";
 import { SignUpContainer } from "./sign-up-form.styles.jsx";
 import FormInput from "../form-input/form-input.component.jsx";
 import { useState } from "react";
-import {
-  createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
-} from "../utils/firebase/firebase.utils";
 
 const defaultFormFields = {
   //*Empty input props for typing in the Sign Up form
