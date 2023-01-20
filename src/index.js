@@ -1,7 +1,7 @@
-import { stripePromise } from "./utils/stripe/stripe.utils.js";
+import { stripePromise } from "./utils/stripe/stripe.utils";
 import { Elements } from "@stripe/react-stripe-js"; //*The Elements provider allows you to use Element components and access the Stripe object in any nested component.
 import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "./store/store.js";
+import { store, persistor } from "./store/store";
 import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom";
